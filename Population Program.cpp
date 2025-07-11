@@ -5,13 +5,13 @@
 
 int main()
 {
-    int starting_org, days, tot_days, population;
+    int days, tot_days, population;
     float increase;
 
     std::cout << "What is the starting number of organisms? \n";
-    std::cin >> starting_org;
+    std::cin >> population;
     
-    if (starting_org < 2)
+    if (population < 2)
     {
         std::cout << "Value is too low \n";
         return 0;
@@ -30,9 +30,17 @@ int main()
 
     if (tot_days < 1)
     {
-        std::cout << "Value is too low \n";
+        std::cout << "Value is too low. \n";
         return 0;
 
     }
+    std::cout << " \n";
 
+    //mult = (increase/100) +1;
+
+    for (days = 1; days < tot_days; days++)
+    {
+        population = population * ((increase / 100) + 1);
+        std::cout << "On day " << days << " the total population will be " << population << std::endl;
+    }
 }
